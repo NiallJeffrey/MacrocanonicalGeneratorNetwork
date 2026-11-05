@@ -9,13 +9,7 @@ Code for the paper
 
 ![Macrocanonical generator networks overview](summary_plot.png)
 
-A macrocanonical generator maps a Gaussian random field carrying the target's
-power spectrum to a new realisation whose wavelet phase harmonic (WPH)
-statistics match, in expectation, those of a small pool of simulator outputs,
-in some cases a single one. Once trained, each new sample takes one forward
-pass.
-
-Two benchmarks are included, both at 128 x 128 with periodic boundaries:
+Two demos are included, both at 128 x 128 with periodic boundaries:
 
 | Benchmark | Target | Training fields |
 | --- | --- | --- |

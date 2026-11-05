@@ -8,7 +8,7 @@ __pycache__/
 # Paper PDF
 *.pdf
 
-# Quijote data (obtain separately, see README)
+# Raw Quijote slices (only the preprocessed demo file is distributed)
 data/Quijote_fidu_300.npy
 
 # Training and sampling outputs

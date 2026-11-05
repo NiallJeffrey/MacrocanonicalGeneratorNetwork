@@ -39,9 +39,9 @@ python train_mhd_turbulence.py
 python train_cosmic_web.py
 ```
 
-`train_mhd_turbulence.py` reads `data/mhd_sim_demo.npy`, which is included.
-`train_cosmic_web.py` expects `data/Quijote_fidu_300.npy`, which is not; see
-[Data](#data).
+`train_mhd_turbulence.py` reads `data/mhd_sim_demo.npy` and
+`train_cosmic_web.py` reads `data/quijote_sim_demo.npy`; both are included
+(see [Data](#data)).
 
 Each run writes `<prefix>_netG` (the generator), `<prefix>_spectrum.pt` (the
 input power spectrum), a loss curve and a sample figure, where `<prefix>` is
@@ -80,14 +80,13 @@ its modulus, applies a `log10` transform, mean-pools to 128 x 128, removes a
 smooth large-scale component and normalises. Please cite that paper if you
 use this file.
 
-The cosmic-web benchmark uses slices from the Quijote simulations
-(Villaescusa-Navarro et al. 2020, ApJS 250, 2), which must be obtained from
-https://quijote-simulations.readthedocs.io under their terms of use.
-`data/Quijote_fidu_300.npy` should be an array of shape `(N, 256, 256)`
-holding 2-D density-contrast slices (`delta = rho / rho_mean - 1`) from the
-fiducial suite, of which the first 100 are used. The script applies
-`log10(delta + 1)`, mean-pools to 128 x 128 and normalises; see Appendix C of
-the paper.
+`data/quijote_sim_demo.npy` holds 100 preprocessed 128 x 128 slices from the
+fiducial suite of the Quijote simulations (Villaescusa-Navarro et al. 2020,
+ApJS 250, 2, https://quijote-simulations.readthedocs.io). Each 256 x 256
+density-contrast slice (`delta = rho / rho_mean - 1`) was transformed to
+`log10(delta + 1)` and mean-pooled to 128 x 128; the stack was then
+normalised to zero mean and unit variance and divided by 8 (see Appendix C of
+the paper). Please cite the Quijote paper if you use this file.
 
 ## Citation
 

@@ -202,11 +202,7 @@ def weights_init(m):
 def load_data(path, M, device_wph, device_net):
     """Return the preprocessed target slices (on ``device_wph``) and the 2-D
     power spectrum for the Gaussian input (on ``device_net``)."""
-    data = np.log10(np.load(path).real.astype(np.float32)[:100] + 1)
-    pool = data.shape[1] // M
-    data = data.reshape(data.shape[0], M, pool, M, pool).mean(axis=(2, 4))
-
-    data = (data - data.mean()) / data.std() / 8
+    data = np.load(path)
 
     signal_power = []
     for i in range(data.shape[0]):
@@ -425,7 +421,7 @@ def main():
     run_id = time.strftime("%Y%m%d_%H%M%S")
     prefix = f"cosmic_web_{run_id}"
 
-    data_path = "./data/Quijote_fidu_300.npy"
+    data_path = "./data/quijote_sim_demo.npy"
     save_path = f"{prefix}_netG"
     spectrum_path = f"{prefix}_spectrum.pt"
     loss_plot_path = f"{prefix}_training.png"

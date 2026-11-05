@@ -11,10 +11,8 @@ Code for the paper
 
 Two demos are included, both at 128 x 128 with periodic boundaries:
 
-| Benchmark | Target | Training fields |
-| --- | --- | --- |
-| `mhd_turbulence` | Magnetohydrodynamic turbulence simulation | 1 |
-| `cosmic_web` | Quijote N-body density slices | 100 |
+ `mhd_turbulence`: Magnetohydrodynamic turbulence simulation 
+`cosmic_web` : Quijote N-body density slices
 
 ## Install
 

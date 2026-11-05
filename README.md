@@ -63,22 +63,15 @@ otherwise on the CPU.
 
 `data/mhd_sim_demo.npy` is a 512 x 512 map of simulated dust emission from
 the magnetohydrodynamic simulation of the diffuse interstellar medium used by
-Regaldo-Saint Blancard, Levrier, Allys, Bellomi and Boulanger (2020),
-*Statistical description of dust polarized emission from the diffuse
-interstellar medium: A RWST approach*, A&A 642, A217,
-[arXiv:2007.08242](https://arxiv.org/abs/2007.08242),
-[doi:10.1051/0004-6361/202038044](https://doi.org/10.1051/0004-6361/202038044).
+Regaldo-Saint Blancard et al. 
+[arXiv:2007.08242](https://arxiv.org/abs/2007.08242).
 The map is stored as a complex-valued array; `train_mhd_turbulence.py` takes
 its modulus, applies a log transform, reduces 128 x 128, removes a
 smooth large-scale component and normalises.
 
 `data/quijote_sim_demo.npy` holds 100 preprocessed 128 x 128 slices from the
-fiducial suite of the Quijote simulations (Villaescusa-Navarro et al. 2020,
-ApJS 250, 2, https://quijote-simulations.readthedocs.io). Each 256 x 256
-density-contrast slice (`delta = rho / rho_mean - 1`) was transformed to
-`log10(delta + 1)` and mean-pooled to 128 x 128; the stack was then
-normalised to zero mean and unit variance and divided by 8 (see Appendix C of
-the paper). 
+fiducial suite of the Quijote simulations Villaescusa-Navarro et al. 2020, https://quijote-simulations.readthedocs.io). Each 256 x 256
+density slice is log-transformed, reduced to 128 x 128 and normalised.
 
 ## Citation
 

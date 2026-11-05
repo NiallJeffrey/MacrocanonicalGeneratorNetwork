@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# Paper PDF
+*.pdf
+
+# Quijote data (obtain separately, see README)
+data/Quijote_fidu_300.npy
+
+# Training and sampling outputs
+*_netG
+*_spectrum.pt
+*_training.png
+*_samples.png
+*_generated.png

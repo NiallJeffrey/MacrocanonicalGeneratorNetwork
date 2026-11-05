@@ -1,0 +1,6 @@
+torch>=1.13
+numpy>=1.21,<1.24
+scipy>=1.7
+matplotlib>=3.5
+psutil
+pywph==1.0.1
